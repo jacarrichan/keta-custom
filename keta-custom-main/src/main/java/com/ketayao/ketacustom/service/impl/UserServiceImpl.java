@@ -58,7 +58,7 @@ public class UserServiceImpl implements UserService {
 			}
 			
 			//设定安全的密码，使用passwordService提供的salt并经过1024次 sha-1 hash
-			if (StringUtils.isNotBlank(user.getPlainPassword()) && shiroRealm != null) {
+			if (StringUtils.isNotBlank(user.getPlainPassword()) ) {
 				HashPassword hashPassword = ShiroDbRealm.encryptPassword(user.getPlainPassword());
 				user.setSalt(hashPassword.salt);
 				user.setPassword(hashPassword.password);
@@ -66,7 +66,9 @@ public class UserServiceImpl implements UserService {
 		}
 		
 		userDAO.save(user);
-		shiroRealm.clearCachedAuthorizationInfo(user.getUsername());
+		if(null!=shiroRealm){
+			shiroRealm.clearCachedAuthorizationInfo(user.getUsername());
+		}
 	}
 
 	/*
