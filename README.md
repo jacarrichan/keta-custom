@@ -25,3 +25,11 @@ QQ交流群：22714096
   * 获取地址: https://github.com/pusuo/patchca
   
 ----------------------------------------------------------------------
+#snapshot
+*查看日志
+ ![image](https://raw.github.com/jacarrichan/keta-custom/master/snapshot/log.jpg)
+ 
+*模块管理
+ ![image](https://raw.github.com/jacarrichan/keta-custom/master/snapshot/module.jpg)
+ 
+---------------------------------------------------------------------- 
